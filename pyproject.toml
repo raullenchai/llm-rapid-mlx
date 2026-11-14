@@ -1,0 +1,30 @@
+[project]
+name = "llm-rapid-mlx"
+version = "0.1.0"
+description = "Run LLM prompts against a local Rapid-MLX server"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{name = "Raullen", email = "989846+raullenchai@users.noreply.github.com"}]
+dependencies = ["llm>=0.37.2,<0.38", "openai>=3,<4"]
+keywords = ["llm", "rapid-mlx", "mlx", "local"]
+
+[project.entry-points.llm]
+rapid_mlx = "llm_rapid_mlx"
+
+[project.optional-dependencies]
+test = ["pytest>=8", "pytest-asyncio>=0.24"]
+
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+py-modules = ["llm_rapid_mlx"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+markers = ["live: opt-in tests against an existing Rapid-MLX server"]
+testpaths = ["tests"]

@@ -7,7 +7,7 @@ server requires Apple Silicon.
 
 ## Installation
 
-Requires Python 3.10+ and LLM 0.37.2. From this checkout:
+Requires Python 3.11+ and LLM 0.37.2. From this checkout:
 
 ```sh
 llm install -e .
